@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 class CaseController
 {
-    public function __construct(private PDO $db)
+    public function __construct(private readonly PDO $db)
     {
     }
 
+    /**
+     * @throws JsonException
+     */
     public function show(int $id): void
     {
         header('Content-Type: application/json');
@@ -33,6 +36,6 @@ class CaseController
         $emailStatement->execute(['case_id' => $id]);
         $emails = $emailStatement->fetchAll(PDO::FETCH_ASSOC);
 
-        echo json_encode(['case' => $case, 'emails' => $emails]);
+        echo json_encode(['case' => $case, 'emails' => $emails], JSON_THROW_ON_ERROR);
     }
 }
