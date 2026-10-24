@@ -1,0 +1,21 @@
+# Dependencies: reinstalled from composer.json / package.json, so never committed
+vendor/
+node_modules/
+
+# Secrets and local settings
+.env
+.env.*
+!.env.example
+
+# Editor settings
+.idea/
+.vscode/
+
+# Operating system clutter
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Logs and caches
+*.log
+.phpunit.result.cache
