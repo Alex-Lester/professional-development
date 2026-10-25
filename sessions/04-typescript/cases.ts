@@ -8,7 +8,7 @@ type SupportCase = {
     assignee?: string
 }
 
-const testCases: SupportCase[] = [
+const supportCases: SupportCase[] = [
     {
         id: 1,
         subject: "I'm very upset",
@@ -56,14 +56,14 @@ function openCases(cases: SupportCase[]): SupportCase[]
 
 console.log('\n ----- Part 1 ----- \n');
 
-testCases.forEach((refs) => {
-    console.log(describeCase(refs));
+supportCases.forEach((item) => {
+    console.log(describeCase(item));
 })
 
 console.log('\n ----- Part 2 ----- \n')
 
 const searchCase: number = 99;
-const returned: SupportCase | undefined = findCase(testCases, searchCase);
+const returned: SupportCase | undefined = findCase(supportCases, searchCase);
 if (returned !== undefined) {
     console.log(describeCase(returned))
 } else {
@@ -72,7 +72,7 @@ if (returned !== undefined) {
 
 console.log(' \n ----- Part 3 ----- \n')
 
-const cases = openCases(testCases);
+const cases = openCases(supportCases);
 cases.forEach((item) => {
     console.log(describeCase(item));
 })
