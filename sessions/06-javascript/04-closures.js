@@ -37,7 +37,6 @@ console.log(reservations.filter(inCity('Manchester')).map(({ ref }) => ref));
 function totalCost({stay: {nights}, apartment: {rate}, discount = 0}) {
     return (nights * rate) - discount;
 }
-
 function createLedger() {
     let reservations = [];
 
@@ -60,5 +59,6 @@ for (const reservation of reservations) {
 }
 const count = ledger.count();
 console.log(count);
+
 const total = ledger.total();
 console.log(total);
