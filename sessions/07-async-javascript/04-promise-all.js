@@ -62,8 +62,8 @@ async function showAllParallelHandlingFailure() {
 
     const cities = Array.from(new Set(
         (await Promise.allSettled(refs.map((ref) => getCity(ref))))
-        .filter((result) => result.status !== 'rejected')
-        .map((result) => result.value)
+        .filter((item) => item.status !== 'rejected')
+        .map((item) => item.value)
     ));
 
     console.log(cities);
