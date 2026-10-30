@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="">
+<body>
+<div id="app">
+    <div>
+        <p>Guest: {{ guestName }}</p>
+        <p>Nights: {{ nights }}</p>
+        <input v-model="guestName">
+        <button @click="addNight">Add a night</button>
+    </div>
+    <div>
+        <p>Total Cost: £{{ totalCost }}</p>
+    </div>
+    <div>
+        <input v-model="newRequest">
+        <button @click="addRequest">Add a Request</button>
+        <div v-if="hasRequests">
+            <p>{{ requestCount }} {{requestSummary}}</p>
+            <ul>
+                <request-item
+                        v-for="(item, index) in requests" :key="index"
+                        :text="item"
+                        @remove="removeRequest(index)"
+                ></request-item>
+            </ul>
+        </div>
+        <p v-else>No special requests yet</p>
+    </div>
+</div>
+
+<script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+<script src="./02-requests.js"></script>
+</body>
+</html>
