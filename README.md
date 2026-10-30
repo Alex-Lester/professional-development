@@ -6,7 +6,7 @@ exercises, experiments and small projects.
 ## What's in here
 
 Each session has its own folder under `sessions/`, numbered in order,
-for example `sessions/01-baseline/`.
+for example `sessions/01-10`.
 
 Areas I'm working on:
 
